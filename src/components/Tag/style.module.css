@@ -1,0 +1,13 @@
+.root {
+  text-decoration: none;
+  color: var(--color-text-accent);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 1;
+  padding: 2px;
+}
+
+.root:hover {
+  background-color: var(--color-surface-accent);
+}
