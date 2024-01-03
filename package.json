@@ -19,6 +19,7 @@
     "@astrojs/check": "^0.3.4",
     "@astrojs/preact": "^3.0.2",
     "@astrojs/rss": "^4.0.1",
+    "@fontsource-variable/noto-sans-jp": "^5.0.17",
     "astro": "^4.0.9",
     "clsx": "^2.1.0",
     "preact": "^10.19.3",
