@@ -1,0 +1,15 @@
+---
+import BaseLayout from './BaseLayout.astro';
+// TODO: 型適切につける
+interface Props {
+  frontmatter: {
+    title: string
+    author: string
+  }
+}
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title}>
+  <slot />
+</BaseLayout>
