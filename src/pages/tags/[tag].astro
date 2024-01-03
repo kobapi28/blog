@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import Title from '../../components/Title'
+import PostItem from '../../components/PostItem'
 
 interface Props {
   posts: any[];
@@ -27,7 +28,5 @@ const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.include
 
 <BaseLayout title={tag}>
   <Title type='tag' title={tag}/>
-  <ul>
-		{filteredPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-	</ul>
+	{filteredPosts.map((post) => <PostItem url={post.url} title={post.frontmatter.title} date={post.frontmatter.pubDate} tags={post.frontmatter.tags} />)}
 </BaseLayout>

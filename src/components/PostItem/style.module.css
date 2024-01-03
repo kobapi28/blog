@@ -1,0 +1,26 @@
+.root {
+  position: relative;
+}
+
+.link {
+  position: absolute;
+  inset: 0;
+}
+
+.title {
+  font-size: var(--font-size-large);
+  font-weight: bold;
+  color: var(--color-text-primary);
+}
+
+.date {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding-left: 0px;
+}
