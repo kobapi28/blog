@@ -1,0 +1,15 @@
+.root {
+  font-size: 40px;
+}
+
+.text {
+  color: var(--color-text-primary);
+}
+
+.link {
+  text-decoration: none;
+  color: var(--color-text-accent);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
