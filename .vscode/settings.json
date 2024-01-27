@@ -1,0 +1,10 @@
+{
+	"prettier.enable": false,
+  "stylelint.validate": [
+    "css",
+    "astro",
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
+  },
+}
