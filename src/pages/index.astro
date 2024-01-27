@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import Title from '../components/Title'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import Title from '@/components/Title'
 import PostItem from '../components/PostItem'
 
 const PAGE_TITLE = 'All Posts'
@@ -25,10 +25,15 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 </BaseLayout>
 
 <style>
-@media (min-width: 768px) {
+@media (width >= 768px) {
+
 	.articles {
 		width: 50%;
 		margin: 0 auto;
+	}
+
+	.hoge {
+		color: black;
 	}
 }
 </style>
