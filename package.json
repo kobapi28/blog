@@ -7,7 +7,7 @@
     "dev:astro": "astro dev",
     "dev:type:style": "pnpm type:gen:style -w",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check && tsc --noEmit",
