@@ -1,15 +1,13 @@
 ---
 layout: '../../layouts/PostLayout.astro'
 title: 'astro でブログつくりました'
-pubDate: 2024-01-20
+publishedAt: 2024/01/20
 description: 'astro blog 作るまでに設定したやつメモ'
-author: 'Astro学習者'
 image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'Astroのロゴ。'
 tags: ["astro", "ブログ", "公開学習"]
 ---
-# astro でブログつくりました
 
 # h1
 ## h2
@@ -46,3 +44,5 @@ astro のビルド時に ts の型チェックをするようにする。
 
 ## 引用
 > 引用
+
+inline code `test`

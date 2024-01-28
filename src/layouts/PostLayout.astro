@@ -1,15 +1,47 @@
 ---
+import '../styles/post.css'
 import BaseLayout from './BaseLayout.astro';
 // TODO: 型適切につける
 interface Props {
   frontmatter: {
     title: string
-    author: string
+    description: string
+    publishedAt: string
   }
 }
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
-  <slot />
+  <main>
+    <div class="title">
+      <h1>{frontmatter.title}</h1>
+      <p>{frontmatter.description}</p>
+      <p>{frontmatter.publishedAt}</p>
+    </div>
+    <div class="content">
+      <slot />
+    </div>
+  </main>
 </BaseLayout>
+
+<style>
+  main {
+    width: 60%;
+    padding-block: var(--space-xxl);
+    margin-inline: auto;
+    overflow-y: auto;
+  }
+
+  .title {
+    margin-block: var(--space-xxl);
+    text-align: center;
+  }
+
+
+  .content {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: var(--space-l);
+    border-radius: var(--radius-m);
+  }
+</style>

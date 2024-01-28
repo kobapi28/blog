@@ -1,9 +1,78 @@
 :root {
-  /* Color */
-  --color-text-primary: rgb(43, 44, 63);
-  --color-text-secondary: rgb(110, 113, 145);
-  --color-text-accent: rgb(255, 81, 89);
+  /* Color Global */
+
+  /* blue */
+  --color-blue-a0:  #ffffff;
+  --color-blue-a10:  #dce3f7;
+  --color-blue-a20:  #b9c8ef;
+  --color-blue-a30:  #94aee6;
+  --color-blue-a40:  #6c94dd;
+  --color-blue-a50:  #397cd4;
+  --color-blue-a60:  #3262a6;
+  --color-blue-a70:  #2a4979;
+  --color-blue-a80:  #213250;
+  --color-blue-a90:  #161c2a;
+
+  /* pink */
+  --color-pink-a0:  #ffffff;
+  --color-pink-a10:  #fbdae5;
+  --color-pink-a20:  #f4b5cb;
+  --color-pink-a30:  #eb90b1;
+  --color-pink-a40:  #e16899;
+  --color-pink-a50:  #d43981;
+  --color-pink-a60:  #a63166;
+  --color-pink-a70:  #7a294c;
+  --color-pink-a80:  #511f34;
+  --color-pink-a90:  #2b151d;
+
+  /* yellow */
+  --color-yellow-a0:  #ffffff;
+  --color-yellow-a10:  #f9f2d9;
+  --color-yellow-a20:  #f2e6b3;
+  --color-yellow-a30:  #e9da8d;
+  --color-yellow-a40:  #dfce65;
+  --color-yellow-a50:  #d4c239;
+  --color-yellow-a60:  #a69831;
+  --color-yellow-a70:  #7a7028;
+  --color-yellow-a80:  #514a1e;
+  --color-yellow-a90:  #2b2714;
+
+  
+  /** green */
+  --color-green-a0: #ffffff;
+  --color-green-a10: #def7e7;
+  --color-green-a20: #bcefd0;
+  --color-green-a30: #98e7b9;
+  --color-green-a40: #70dea2;
+  --color-green-a50: #39d48c;
+  --color-green-a60: #33a66e;
+  --color-green-a70: #2c7a52;
+  --color-green-a80: #225038;
+  --color-green-a90: #172a1f;
+
+  /* black */
+  --color-black-a0: #ffffff;
+  --color-black-a10: #cbccd0;
+  --color-black-a20: #999ba3;
+  --color-black-a30: #6a6d78;
+  --color-black-a40: #3e434f;
+  --color-black-a50: #161c2a;
+  --color-black-a60: #131823;
+  --color-black-a70: #10141c;
+  --color-black-a80: #0c0e15;
+  --color-black-a90: #06070c;
+
+
+
+
+        
+  /* Color Alias */
+  --color-text-primary: var(--color-black-a60);
+  --color-text-secondary: var(--color-black-a40);
+  --color-text-accent: var(--color-pink-a60);
+  --color-surface-primary: var(--color-pink-a10);
   --color-surface-accent: rgba(255, 81, 89, 0.1);
+  --color-border-primary: var(--color-blue-a10);
   
     /* Font Size */
     --radio: 1.25;
@@ -32,38 +101,54 @@
   --space-s: calc(var(--space-m) / var(--radio));
   --space-xs: calc(var(--space-s) / var(--radio));
   --space-xxs: calc(var(--space-xs) / var(--radio));
+
+  /* Border Radius */
+  --radius-xs: 4px;
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 16px;
+  --radius-xl: 24px;
 }
 
 body {
   font-family: 'Noto Sans JP Variable', sans-serif;
+  background: linear-gradient(117deg, #b6cded 0%, #EEE9E8 100%);
+  min-height: 100dvh;
+  color: var(--color-text-primary);
 }
 
 h1 {
   font-size: var(--font-size-h1);
   font-weight: 700;
+  padding-top: var(--space-xxl);
 }
 
 h2 {
   font-size: var(--font-size-h2);
   font-weight: 700;
+  padding-top: var(--space-xl);
 }
 
 h3 {
   font-size: var(--font-size-h3);
   font-weight: 700;
+  padding-top: var(--space-l);
 }
 
 h4 {
   font-size: var(--font-size-h4);
   font-weight: 700;
+  padding-top: var(--space-m);
 }
 
 h5 {
   font-size: var(--font-size-h5);
   font-weight: 700;
+  padding-top: var(--space-s);
 }
 
 h6 {
   font-size: var(--font-size-h6);
   font-weight: 700;
+  padding-top: var(--space-xs);
 }
