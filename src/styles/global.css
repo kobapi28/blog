@@ -67,15 +67,15 @@
 
         
   /* Color Alias */
-  --color-text-primary: var(--color-black-a60);
-  --color-text-secondary: var(--color-black-a40);
+  --color-text-primary: var(--color-black-a40);
+  --color-text-secondary: var(--color-black-a30);
   --color-text-accent: var(--color-pink-a60);
   --color-surface-primary: var(--color-pink-a10);
   --color-surface-accent: rgba(255, 81, 89, 0.1);
   --color-border-primary: var(--color-blue-a10);
   
     /* Font Size */
-    --radio: 1.25;
+    --radio: 1.125;
     --font-size-3xl: calc(var(--font-size-2xl) * var(--radio));
     --font-size-2xl: calc(var(--font-size-xl) * var(--radio));
     --font-size-xl: calc(var(--font-size-l) * var(--radio));

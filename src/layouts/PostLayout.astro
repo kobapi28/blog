@@ -33,9 +33,22 @@ const { frontmatter } = Astro.props;
     overflow-y: auto;
   }
 
+  @media screen and (width <= 768px) {
+
+    main {
+      width: 90%;
+    }
+    
+  }
+
   .title {
     margin-block: var(--space-xxl);
     text-align: center;
+    word-break: auto-phrase;
+
+    p {
+      color: var(--color-text-secondary);
+    }
   }
 
 

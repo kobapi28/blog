@@ -27,3 +27,7 @@ blockquote {
   border-left: 4px solid #cccccc;
   color: #666666;
 }
+
+p {
+  line-height: 2;
+}
