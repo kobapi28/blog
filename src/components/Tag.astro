@@ -1,4 +1,18 @@
-.root {
+---
+interface Props {
+  tag: string
+}
+
+const { tag } = Astro.props
+---
+
+<a class='root' href={`/tags/${tag}`}>
+  <span>#</span>
+  <span>{tag}</span>
+</a>
+
+<style>
+  .root {
   /* NOTE: 以下2つはカード全体がリンクになっている状況でも押せるためにつけたプロパティ */
   position: relative;
   z-index: 1;
@@ -13,3 +27,5 @@
 .root:hover {
   background-color: var(--color-surface-accent);
 }
+
+</style>

@@ -1,0 +1,56 @@
+---
+import Tag from './Tag.astro';
+
+interface Props {
+  title: string;
+  date: string;
+  tags: string[];
+  url: string;
+  description: string;
+}
+
+const { title, date, tags, url, description } = Astro.props
+---
+
+<article class='root'>
+  <a href={url} class='link'/>
+  <h2 class='title'>{title}</h2>
+  <p>{description}</p>
+  <ul class='tags'>
+    {tags.map(tag => (
+      <li>
+        <Tag tag={tag} />
+      </li>
+    ))}
+  </ul>
+  <p class='date'>{date}</p>
+</article>
+
+<style>
+  .root {
+  position: relative;
+}
+
+.link {
+  position: absolute;
+  inset: 0;
+}
+
+.title {
+  font-size: var(--font-size-large);
+  color: var(--color-text-primary);
+  font-weight: 400;
+}
+
+.date {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding-left: 0;
+}
+</style>

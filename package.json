@@ -5,24 +5,19 @@
   "scripts": {
     "dev": "pnpm '/^dev:.*$/'",
     "dev:astro": "astro dev",
-    "dev:type:style": "pnpm type:gen:style -w",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check && tsc --noEmit",
-    "type:gen:style": "hcm 'src/**/*.module.css'",
-    "lint": "eslint --ext '.js,.cjs,.ts,.jsx,.tsx,.astro' .",
-    "lint:fix": "eslint --ext '.js,.cjs,.ts,.jsx,.tsx,.astro' --fix ."
+    "lint": "eslint --ext '.js,.cjs,.ts,.astro' .",
+    "lint:fix": "eslint --ext '.js,.cjs,.ts,.astro' --fix ."
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
-    "@astrojs/preact": "^3.0.2",
     "@astrojs/rss": "^4.0.1",
     "@fontsource-variable/noto-sans-jp": "^5.0.17",
     "astro": "^4.0.9",
-    "clsx": "^2.1.0",
-    "preact": "^10.19.3",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
@@ -30,7 +25,6 @@
     "@typescript-eslint/parser": "^6.17.0",
     "eslint": "^8.56.0",
     "eslint-plugin-astro": "^0.31.0",
-    "happy-css-modules": "^2.1.2",
     "postcss": "^8.4.32",
     "postcss-html": "^1.6.0",
     "stylelint": "^16.1.0",

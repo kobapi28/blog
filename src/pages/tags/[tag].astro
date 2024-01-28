@@ -1,13 +1,32 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import Title from '../../components/Title'
-import PostItem from '../../components/PostItem'
+import Title from '../../components/Title.astro'
+import PostItem from '../../components/PostItem.astro'
 
 interface Props {
-  posts: any[];
+  posts: Post[];
 }
 
-export async function getStaticPaths() {
+type Post = {
+  url: string;
+  frontmatter: {
+    title: string;
+    pubDate: string;
+    tags: string[];
+    description: string;
+  };
+}
+
+type GetStaticPathsResult = {
+  params: {
+    tag: string;
+  };
+  props: {
+    posts: Post[]
+  }
+}
+
+export async function getStaticPaths(): Promise<GetStaticPathsResult> {
   const allPosts = await Astro.glob('../posts/*.md');
 
   const uniqueTags: any = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
@@ -27,6 +46,6 @@ const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.include
 ---
 
 <BaseLayout title={tag}>
-  <Title type='tag' title={tag}/>
-	{filteredPosts.map((post) => <PostItem url={post.url} title={post.frontmatter.title} date={post.frontmatter.pubDate} tags={post.frontmatter.tags} />)}
+  <Title title={tag}/>
+	{filteredPosts.map((post) => <PostItem url={post.url} title={post.frontmatter.title} date={post.frontmatter.pubDate} tags={post.frontmatter.tags} description={post.frontmatter.description} />)}
 </BaseLayout>
