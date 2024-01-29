@@ -50,6 +50,18 @@
   --color-green-a80: #225038;
   --color-green-a90: #172a1f;
 
+  /** gray */
+--color-gray-a0: #ffffff;
+--color-gray-a10: #f4f5f5;
+--color-gray-a20: #eaeaec;
+--color-gray-a30: #e0e0e3;
+--color-gray-a40: #d5d6d9;
+--color-gray-a50: #cbccd0;
+--color-gray-a60: #9f9fa2;
+--color-gray-a70: #747577;
+--color-gray-a80: #4d4d4f;
+--color-gray-a90: #282929;
+
   /* black */
   --color-black-a0: #ffffff;
   --color-black-a10: #cbccd0;
@@ -62,20 +74,19 @@
   --color-black-a80: #0c0e15;
   --color-black-a90: #06070c;
 
-
-
-
-        
   /* Color Alias */
   --color-text-primary: var(--color-black-a40);
   --color-text-secondary: var(--color-black-a30);
   --color-text-accent: var(--color-pink-a60);
   --color-surface-primary: var(--color-pink-a10);
+  --color-surface-secondary: rgb(208, 215, 223);
   --color-surface-accent: rgba(255, 81, 89, 0.1);
   --color-border-primary: var(--color-blue-a10);
   --color-border-secondary: var(--color-black-a10);
+  --color-background: var(--color-black-a0);
+  --color-background-secondary: rgba(0,0,0,0.01)
   
-    /* Font Size */
+    /* Font Size */;
     --font-size-radio: 1.125;
     --font-size-3xl: calc(var(--font-size-2xl) * var(--font-size-radio));
     --font-size-2xl: calc(var(--font-size-xl) * var(--font-size-radio));
@@ -112,9 +123,24 @@
   --radius-xl: 24px;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-primary: var(--color-black-a0);
+    --color-text-secondary: var(--color-black-a10);
+    --color-text-accent: var(--color-pink-a20);
+    --color-surface-primary: var(--color-pink-a10);
+    --color-surface-secondary: var(--color-black-a10);
+    --color-surface-accent: rgba(255, 81, 89, 0.1);
+    --color-border-primary: var(--color-blue-a10);
+    --color-border-secondary: var(--color-black-a10);
+  --color-background-primary: var(--color-black-a80);
+  --color-background-secondary: rgba(255, 255,255,0.06)
+  }
+}
+
 body {
   font-family: 'Noto Sans JP Variable', sans-serif;
-  background: linear-gradient(117deg, #b6cded 0%, #EEE9E8 100%);
+  background: var(--color-background-primary);
   min-height: 100dvh;
   color: var(--color-text-primary);
 }

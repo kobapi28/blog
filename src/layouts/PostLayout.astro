@@ -33,7 +33,6 @@ const { frontmatter } = Astro.props;
   }
 
   @media screen and (width <= 768px) {
-
     main {
       width: 90%;
     }
@@ -55,7 +54,7 @@ const { frontmatter } = Astro.props;
 
 
   .content {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--color-background-secondary);
     padding: var(--space-l);
     border-radius: var(--radius-m);
 
