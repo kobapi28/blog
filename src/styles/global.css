@@ -73,17 +73,18 @@
   --color-surface-primary: var(--color-pink-a10);
   --color-surface-accent: rgba(255, 81, 89, 0.1);
   --color-border-primary: var(--color-blue-a10);
+  --color-border-secondary: var(--color-black-a10);
   
     /* Font Size */
-    --radio: 1.125;
-    --font-size-3xl: calc(var(--font-size-2xl) * var(--radio));
-    --font-size-2xl: calc(var(--font-size-xl) * var(--radio));
-    --font-size-xl: calc(var(--font-size-l) * var(--radio));
-    --font-size-l: calc(var(--font-size-m) * var(--radio));
+    --font-size-radio: 1.125;
+    --font-size-3xl: calc(var(--font-size-2xl) * var(--font-size-radio));
+    --font-size-2xl: calc(var(--font-size-xl) * var(--font-size-radio));
+    --font-size-xl: calc(var(--font-size-l) * var(--font-size-radio));
+    --font-size-l: calc(var(--font-size-m) * var(--font-size-radio));
     --font-size-m: 1rem;
-    --font-size-s: calc(var(--font-size-m) / var(--radio));
-    --font-size-xs: calc(var(--font-size-s) / var(--radio));
-    --font-size-xxs: calc(var(--font-size-xs) / var(--radio));
+    --font-size-s: calc(var(--font-size-m) / var(--font-size-radio));
+    --font-size-xs: calc(var(--font-size-s) / var(--font-size-radio));
+    --font-size-xxs: calc(var(--font-size-xs) / var(--font-size-radio));
 
   /* Heading */
   --font-size-h1: var(--font-size-3xl);
@@ -94,13 +95,14 @@
   --font-size-h6: var(--font-size-s);
 
   /* Spacing */;
-  --space-xxl: calc(var(--space-xl) * var(--radio));
-  --space-xl: calc(var(--space-l) * var(--radio));
-  --space-l: calc(var(--space-m) * var(--radio));
+  --space-radio: 1.25;
+  --space-xxl: calc(var(--space-xl) * var(--space-radio));
+  --space-xl: calc(var(--space-l) * var(--space-radio));
+  --space-l: calc(var(--space-m) * var(--space-radio));
   --space-m: 1rem;
-  --space-s: calc(var(--space-m) / var(--radio));
-  --space-xs: calc(var(--space-s) / var(--radio));
-  --space-xxs: calc(var(--space-xs) / var(--radio));
+  --space-s: calc(var(--space-m) / var(--space-radio));
+  --space-xs: calc(var(--space-s) / var(--space-radio));
+  --space-xxs: calc(var(--space-xs) / var(--space-radio));
 
   /* Border Radius */
   --radius-xs: 4px;
@@ -120,35 +122,29 @@ body {
 h1 {
   font-size: var(--font-size-h1);
   font-weight: 700;
-  padding-top: var(--space-xxl);
 }
 
 h2 {
   font-size: var(--font-size-h2);
   font-weight: 700;
-  padding-top: var(--space-xl);
 }
 
 h3 {
   font-size: var(--font-size-h3);
   font-weight: 700;
-  padding-top: var(--space-l);
 }
 
 h4 {
   font-size: var(--font-size-h4);
   font-weight: 700;
-  padding-top: var(--space-m);
 }
 
 h5 {
   font-size: var(--font-size-h5);
   font-weight: 700;
-  padding-top: var(--space-s);
 }
 
 h6 {
   font-size: var(--font-size-h6);
   font-weight: 700;
-  padding-top: var(--space-xs);
 }

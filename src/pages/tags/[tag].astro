@@ -43,6 +43,39 @@ const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.include
 ---
 
 <BaseLayout title={tag}>
-  <Title title={tag}/>
-	{filteredPosts.map((post) => <PostItem url={post.url} title={post.frontmatter.title} date={post.frontmatter.publishedAt} tags={post.frontmatter.tags} description={post.frontmatter.description} />)}
+  <main>
+		<Title title={tag} />
+		<div class="articles">
+			{filteredPosts.map((post) => 
+			<PostItem 
+			isLast={post === filteredPosts[filteredPosts.length - 1]}
+			class:list={['article']}
+			url={post.url!} 
+			description={post.frontmatter.description}
+			title={post.frontmatter.title} 
+			date={post.frontmatter.publishedAt} 
+			tags={post.frontmatter.tags} 
+			/>)}
+		</div>
+	</main>
 </BaseLayout>
+
+<style>
+	main {
+		padding: var(--space-xxl) var(--space-m);
+	}
+
+	.articles {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-l);
+	}
+
+@media (width >= 768px) {
+
+	main {
+		width: 50%;
+		margin: 0 auto;
+	}
+}
+</style>

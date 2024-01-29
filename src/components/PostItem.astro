@@ -7,28 +7,37 @@ interface Props {
   tags: string[];
   url: string;
   description: string;
+  isLast?: boolean;
 }
 
-const { title, date, tags, url, description } = Astro.props
+const { title, date, tags, url, description, isLast = false} = Astro.props
 ---
 
-<article class='root'>
+<article class:list={['root', isLast && 'last']}>
   <a href={url} class='link'/>
-  <h2 class='title'>{title}</h2>
-  <p>{description}</p>
-  <ul class='tags'>
-    {tags.map(tag => (
-      <li>
-        <Tag tag={tag} />
-      </li>
-    ))}
-  </ul>
-  <p class='date'>{date}</p>
+  <div class="wrapper">
+    <h2 class='title'>{title}</h2>
+    <p class="description">{description}</p>
+    <ul class='tags'>
+      {tags.map(tag => (
+        <li>
+          <Tag tag={tag} />
+        </li>
+      ))}
+    </ul>
+    <p class='date'>{date}</p>
+  </div>
 </article>
 
 <style>
   .root {
+    border-bottom: 1px solid var(--color-border-secondary);
+    padding-bottom: var(--space-l);
   position: relative;
+}
+
+.last {
+  border-bottom: none;
 }
 
 .link {
@@ -36,10 +45,20 @@ const { title, date, tags, url, description } = Astro.props
   inset: 0;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
 .title {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-h4);
   color: var(--color-text-primary);
   font-weight: 400;
+}
+
+.description {
+  color: var(--color-text-secondary);
 }
 
 .date {
