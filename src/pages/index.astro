@@ -2,10 +2,11 @@
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import PostItem from '../components/PostItem.astro'
 import Title from '../components/Title.astro'
-import type { FrontMatter } from '@/types/frontMatter'
+import { getCollection } from 'astro:content'
+import { queryPosts } from '@/libs/query/post'
 
 const PAGE_TITLE = 'All Posts'
-const allPosts = await Astro.glob<FrontMatter>('../pages/posts/*.md');
+const allPosts = await queryPosts()
 ---
 
 <BaseLayout title={PAGE_TITLE}>
@@ -13,14 +14,15 @@ const allPosts = await Astro.glob<FrontMatter>('../pages/posts/*.md');
 		<Title title={PAGE_TITLE} />
 		<div class="articles">
 			{allPosts.map((post) => 
+			// TODO: fix url
 			<PostItem 
 			isLast={post === allPosts[allPosts.length - 1]}
 			class:list={['article']}
-			url={post.url!} 
-			description={post.frontmatter.description}
-			title={post.frontmatter.title} 
-			date={post.frontmatter.publishedAt} 
-			tags={post.frontmatter.tags} 
+			url={''} 
+			description={post.description}
+			title={post.title} 
+			date={post.publishedAt} 
+			tags={post.tags} 
 			/>)}
 		</div>
 	</main>
