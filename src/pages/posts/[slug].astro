@@ -1,0 +1,21 @@
+---
+import { queryPosts } from '@/libs/query/post'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('post')
+
+  return posts.map((post) => {
+    return {
+      params: {
+        slug: post.slug
+      },
+      props: post,
+    }
+  })
+}
+
+const post = Astro.props
+---
+
+<h1>{ post.slug }</h1>

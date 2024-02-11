@@ -14,11 +14,10 @@ const allPosts = await queryPosts()
 		<Title title={PAGE_TITLE} />
 		<div class="articles">
 			{allPosts.map((post) => 
-			// TODO: fix url
 			<PostItem 
 			isLast={post === allPosts[allPosts.length - 1]}
 			class:list={['article']}
-			url={''} 
+			url={'/posts/' + post.slug} 
 			description={post.description}
 			title={post.title} 
 			date={post.publishedAt} 

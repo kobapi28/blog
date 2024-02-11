@@ -7,4 +7,6 @@ export const postSchema = z.object({
   publishedAt: z.string(),
 })
 
-export type Post = z.infer<typeof postSchema>
+export type Post = z.infer<typeof postSchema> & {
+  slug: string
+}
