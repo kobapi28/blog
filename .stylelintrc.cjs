@@ -2,15 +2,15 @@ module.exports = {
   extends: ["stylelint-config-standard", "stylelint-config-html/astro"],
   rules: {
     "no-unknown-animations": true,
-    "no-unknown-custom-properties": true,
+    // "no-unknown-custom-properties": true,
     "declaration-no-important": true,
-    "at-rule-empty-line-before": "always",
-    "custom-property-empty-line-before": [
-      "always", {
-      except: ["after-comment", "after-custom-property", "first-nested"],
-    }],
+    // "at-rule-empty-line-before": "always",
+    // "custom-property-empty-line-before": [
+    //   "always", {
+    //   except: ["after-comment", "after-custom-property", "first-nested"],
+    // }],
     "declaration-empty-line-before": "never",
-    "rule-empty-line-before": "always",
+    // "rule-empty-line-before": "always",
     "alpha-value-notation": "number",
     "color-function-notation": "legacy",
     "color-hex-length": "long",
