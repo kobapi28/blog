@@ -16,6 +16,14 @@ export async function getStaticPaths() {
 }
 
 const post = Astro.props
+const { Content, headings } = await post.render()
 ---
 
-<h1>{ post.slug }</h1>
+<!-- {
+  headings.map((heading) => {
+    return (
+      <p>{heading.text}</p>
+    )
+  })
+} -->
+<Content />
