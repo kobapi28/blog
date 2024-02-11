@@ -1,30 +1,89 @@
+import type { Post } from "@/libs/schema/post";
 import { Resvg } from "@resvg/resvg-js";
 import satori from "satori";
 
-export async function getOgImage(text: string) {
+export async function getOgImage(post: Omit<Post, 'slug'>) {
+  const { title, tags, publishedAt } = post
   const fontData = (await getFontData()) as ArrayBuffer;
+  const width = 1200;
+  const height = 630;
+
   const svg = await satori(
-    <main
+    <div
+    style={{
+      height,
+      width,
+      display: "flex",
+      backgroundImage: "linear-gradient(105deg, rgba(242, 178, 53, 0.95) 0%, rgba(230, 207, 82, 0.96) 36%, rgba(241, 228, 160, 0.96) 66.24%, #E7E03D 100%)",
+      alignItems: "center",
+      justifyContent: "center",
+      fontFamily: "Noto Sans JP",
+    }}>
+      <div
       style={{
-        height: "100%",
-        width: "100%",
-        backgroundColor: "#444",
-        color: "#fff",
-        padding: "10px",
-      }}
-    >
-      <section>
-        <h1 style={{ fontSize: "40px" }}>{text}</h1>
-      </section>
-    </main>,
+        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+        width: width - 64,
+        height: height - 64,
+        borderRadius: "24px",
+        backgroundColor: "#ffffff",
+        display: "flex",
+        alignItems: "stretch",
+      }}>
+        <div 
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          padding: "32px",
+          justifyContent: "space-between"
+        }}>
+          <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "48px"
+          }}
+          >
+        <span
+          style={{
+            fontSize: "24px",
+            color: "#6a6d78"
+          }}
+        >
+          kobapi.me/posts/
+        </span>
+        <span
+        style={{
+          color: "#10141c",
+          fontSize: "48px",
+        }}
+        >{title}</span>
+          </div>
+          <div 
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "8px",
+            fontSize: "24px",
+            color: "#6a6d78"
+          }}>
+            <span>
+              date: {publishedAt}
+            </span>
+            <span>
+              tags: {tags.join(", ")}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    ,
     {
-      width: 800,
-      height: 400,
+      width,
+      height,
       fonts: [
         {
           name: "Noto Sans JP",
           data: fontData,
-          style: "normal",
         },
       ],
     }

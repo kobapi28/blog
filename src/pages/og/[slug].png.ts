@@ -16,7 +16,7 @@ export async function GET({ params }: APIContext) {
 
   const post = await getEntryBySlug("post", slug);
   if (!post) return { status: 404 };
-  const body = await getOgImage(post.data.title);
+  const body = await getOgImage(post.data);
 
   return new Response(body, {
     headers: {
