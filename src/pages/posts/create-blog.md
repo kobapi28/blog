@@ -6,15 +6,8 @@ description: 'astro blog 作るまでに設定したやつメモ'
 image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'Astroのロゴ。'
-tags: ["astro", "ブログ", "公開学習"]
+tags: ["astro"]
 ---
-
-# h1
-## h2
-### h3
-#### h4
-##### h5
-###### h6
 
 ## import エイリアスの設定
 別に astro に限ったことじゃないけど
@@ -42,7 +35,20 @@ astro のビルド時に ts の型チェックをするようにする。
 }
 ```
 
-## 引用
-> 引用
+## やりたいこと
 
-inline code `test`
+### ブログ内のリンクを OGP と一緒に表示する
+カード形式での表示にしたい
+→ api いるなら hono 使ってみたいな（調べるところからだが）
+
+### 記事の最初に目次の一覧を出す
+note にあるような最初に見出し全部表示したい
+
+### ちゃんとカラーパレット設計する
+適当なので
+
+### OGP 自動生成
+タイトルを表示する OGP を自動生成する
+
+### linter, ci 周り設定
+全然できてないので
