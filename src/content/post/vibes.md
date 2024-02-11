@@ -1,5 +1,4 @@
 ---
-layout: '../../layouts/PostLayout.astro'
 slug: 'freee-vibes-release-event'
 title: 'vibes リリースイベント参加レポ'
 publishedAt: 2024/02/04

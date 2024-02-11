@@ -1,6 +1,11 @@
 ---
-import { queryPosts } from '@/libs/query/post'
+import Header from '@/components/Header.astro'
+import '../../styles/reset.css'
+import '../../styles/global.css'
+import '@fontsource-variable/noto-sans-jp';
+import { SEO } from 'astro-seo'
 import { getCollection } from 'astro:content'
+import { ViewTransitions } from 'astro:transitions'
 
 export async function getStaticPaths() {
   const posts = await getCollection('post')
@@ -26,4 +31,138 @@ const { Content, headings } = await post.render()
     )
   })
 } -->
-<Content />
+
+
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <SEO
+      charset='utf-8'
+      openGraph={{
+        basic: {
+          title: post.data.title,
+          type: 'article',
+          image: new URL(`/og/${post.slug}.png`, Astro.url.origin).toString(),
+          url: `https://kobapi.me/posts/${post.slug}`
+        },
+        image: {
+          alt: post.data.title
+        }
+        }
+      } 
+  />
+		<title>{post.data.title} | kobapi.me</title>
+		<ViewTransitions />
+	</head>
+	<body>
+		<Header />
+		<main>
+      <div class="title">
+        <h1>{post.data.title}</h1>
+        <p>{post.data.description}</p>
+        <p>{post.data.publishedAt}</p>
+      </div>
+      <div class="content">
+        <Content />
+      </div>
+    </main>
+	</body>
+</html>
+
+
+<style>
+  main {
+    width: 60%;
+    padding-block: var(--space-xxl);
+    margin-inline: auto;
+    overflow-y: auto;
+  }
+
+  @media screen and (width <= 768px) {
+    main {
+      width: 90%;
+    }
+    
+  }
+
+  .title {
+    margin-block: var(--space-xxl);
+    text-align: center;
+    word-break: auto-phrase;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+
+    p {
+      color: var(--color-text-secondary);
+    }
+  }
+
+
+  .content {
+    background-color: var(--color-background-secondary);
+    padding: var(--space-l);
+    border-radius: var(--radius-m);
+
+    h1, h2, h3, h4, h5, h6 {
+  border-bottom: 1px solid var(--color-border-primary);
+  padding-bottom: var(--space-xxs);
+  margin-bottom: var(--space-m);
+}
+
+h1 {
+  padding-top: var(--space-xxl);
+}
+
+h2 {
+  padding-top: var(--space-xl);
+}
+
+h3 {
+  padding-top: var(--space-l);
+}
+
+h4 {
+  padding-top: var(--space-m);
+}
+
+h5 {
+  padding-top: var(--space-s);
+}
+
+h6 {
+  padding-top: var(--space-xs);
+}
+
+/* code block */
+
+pre {
+  margin: 12px 0;
+  padding: 12px 0;
+}
+
+/* inline code */
+
+p > code {
+  padding: 0.125rem 0.25rem;
+  color: var(--color-text-accent);
+  background-color: var(--color-surface-accent);
+}
+
+/* blockquote */
+
+blockquote {
+  margin: var(--space-s) 0;
+  padding: var(--space-xs) var(--space-xxs);
+  border-left: 4px solid var(--color-border-secondary);
+  color: var(--color-text-secondary);
+}
+
+p {
+  line-height: 2;
+}
+  }
+</style>

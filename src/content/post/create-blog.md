@@ -1,5 +1,4 @@
 ---
-layout: '../../layouts/PostLayout.astro'
 title: 'astro でブログつくりました'
 publishedAt: 2024/01/20
 description: 'astro blog 作るまでに設定したやつメモ'

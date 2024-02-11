@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/PostLayout.astro'
+# layout: '../../layouts/PostLayout.astro'
 title: '2024年にやりたい12個のこと'
 publishedAt: 2024/01/01
 description: 'プライベートを充実させるために今年やりたい12個のことを定義しました'
