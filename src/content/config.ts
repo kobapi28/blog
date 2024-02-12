@@ -3,9 +3,7 @@ import { defineCollection } from 'astro:content'
 
 const postsCollections = defineCollection({
   type: 'content',
-  schema: postSchema,
+  schema: postSchema
 })
 
-export const collections = {
-  post: postsCollections,
-}
+export const collections = { post: postsCollections }

@@ -11,10 +11,8 @@ export async function getStaticPaths() {
   const posts = await getCollection('post')
 
   return posts.map(post => ({
-    params: {
-      slug: post.slug,
-    },
-    props: post,
+    params: { slug: post.slug },
+    props: post
   }))
 }
 
@@ -22,20 +20,13 @@ const post = Astro.props
 const { Content } = await post.render()
 ---
 
-<!-- {
-  headings.map((heading) => {
-    return (
-      <p>{heading.text}</p>
-    )
-  })
-} -->
-
   <html lang='ja'>
     <head>
       <meta charset='utf-8' />
-      <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-      <meta name='viewport' content='width=device-width' />
-      <meta name='generator' content={Astro.generator} />
+      <link href='/favicon.svg' rel='icon' type='image/svg+xml' />
+      <meta content='width=device-width' name='viewport' />
+      <meta content={Astro.generator} name='generator' />
+      {/* eslint-disable-next-line @stylistic/jsx-pascal-case*/}
       <SEO
         charset='utf-8'
         openGraph={{
@@ -43,11 +34,9 @@ const { Content } = await post.render()
             title: post.data.title,
             type: 'article',
             image: new URL(`/og/${post.slug}.png`, Astro.url.origin).toString(),
-            url: `https://kobapi.me/posts/${post.slug}`,
+            url: `https://kobapi.me/posts/${post.slug}`
           },
-          image: {
-            alt: post.data.title,
-          },
+          image: { alt: post.data.title }
         }}
       />
       <title>
@@ -61,9 +50,15 @@ const { Content } = await post.render()
       <Header />
       <main>
         <div class='title'>
-          <h1>{post.data.title}</h1>
-          <p>{post.data.description}</p>
-          <p>{post.data.publishedAt}</p>
+          <h1>
+            {post.data.title}
+          </h1>
+          <p>
+            {post.data.description}
+          </p>
+          <p>
+            {post.data.publishedAt}
+          </p>
         </div>
         <div class='content'>
           <Content />
@@ -72,7 +67,9 @@ const { Content } = await post.render()
     </body>
   </html>
 
-  <style>
+    <style>
+
+
   main {
     width: 60%;
     padding-block: var(--space-xxl);
@@ -84,7 +81,7 @@ const { Content } = await post.render()
     main {
       width: 90%;
     }
-    
+
   }
 
   .title {
@@ -164,4 +161,6 @@ p {
   line-height: 2;
 }
   }
-  </style>
+
+
+    </style>

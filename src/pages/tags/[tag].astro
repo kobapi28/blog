@@ -17,9 +17,10 @@ export async function getStaticPaths() {
 
   return tags.map((tag: string) => {
     const filteredPosts = posts.filter((post: Post) => post.tags.includes(tag))
+
     return {
       params: { tag },
-      props: { posts: filteredPosts },
+      props: { posts: filteredPosts }
     }
   })
 }
@@ -35,13 +36,13 @@ const filteredPosts = posts.filter((post: Post) => post.tags.includes(tag));
       <div class='articles'>
         {filteredPosts.map((post: Post) => (
           <PostItem
-            isLast={post === filteredPosts[filteredPosts.length - 1]}
             class:list={['article']}
-            url={`/posts/${post.slug}`}
-            description={post.description}
-            title={post.title}
             date={post.publishedAt}
+            description={post.description}
+            isLast={post === filteredPosts[filteredPosts.length - 1]}
             tags={post.tags}
+            title={post.title}
+            url={`/posts/${post.slug}`}
           />
         ))}
       </div>

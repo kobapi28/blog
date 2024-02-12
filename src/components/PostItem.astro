@@ -13,8 +13,8 @@ interface Props {
 const { title, date, tags, url, description, isLast = false } = Astro.props
 ---
 
-  <article class:list={['root', isLast && 'last']}>
-    <a href={url} class='link' />
+  <article class:list={[ 'root', isLast && 'last' ]}>
+    <a class='link' href={url} />
     <div class='wrapper'>
       <h2 class='title'>{title}</h2>
       <p class='description'>{description}</p>
@@ -30,14 +30,6 @@ const { title, date, tags, url, description, isLast = false } = Astro.props
   </article>
 
     <style>
-
-
-
-
-
-
-
-
 
 
   .root {
@@ -82,14 +74,6 @@ const { title, date, tags, url, description, isLast = false } = Astro.props
   list-style: none;
   padding-left: 0;
 }
-
-
-
-
-
-
-
-
 
 
     </style>

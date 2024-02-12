@@ -14,13 +14,13 @@ const allPosts = await queryPosts()
       <div class='articles'>
         {allPosts.map(post => (
           <PostItem
-            isLast={post === allPosts[allPosts.length - 1]}
             class:list={['article']}
-            url={`/posts/${post.slug}`}
-            description={post.description}
-            title={post.title}
             date={post.publishedAt}
+            description={post.description}
+            isLast={post === allPosts[allPosts.length - 1]}
             tags={post.tags}
+            title={post.title}
+            url={`/posts/${post.slug}`}
           />
         ))}
       </div>
