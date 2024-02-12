@@ -8,6 +8,7 @@ module.exports = {
 		"plugin:@typescript-eslint/recommended",
 		"plugin:astro/recommended",
 	],
+	plugins: ["@typescript-eslint", '@stylistic'],
 	env: {
 		browser: true,
 		node: true,
@@ -17,7 +18,6 @@ module.exports = {
 		ecmaVersion: "latest",
 		sourceType: "module",
 	},
-	plugins: ["@typescript-eslint"],
 	rules: {
 		// default eslint rules
 		'array-callback-return': 'error',
@@ -38,9 +38,11 @@ module.exports = {
 		'no-else-return': 'error',
 		'prefer-template': 'error',
 		'yoda': 'error',
-		'indent': ['error', 'tab'],
+		'@stylistic/indent': ['error', 'tab'],
+		// typescript eslint rules
+		'@typescript-eslint/array-type': 'error',
 		// react rules
-		'jsx-quotes': [ 2, 'prefer-single' ],
+		'@stylistic/jsx-quotes': [ 2, 'prefer-single' ],
 	},
 	ignorePatterns: ["node_modules", "dist"],
 	overrides: [
