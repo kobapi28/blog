@@ -1,35 +1,45 @@
 ---
-import Tag from './Tag.astro';
+import Tag from './Tag.astro'
 
 interface Props {
-  title: string;
-  date: string;
-  tags: string[];
-  url: string;
-  description: string;
-  isLast?: boolean;
+  title: string
+  date: string
+  tags: string[]
+  url: string
+  description: string
+  isLast?: boolean
 }
 
-const { title, date, tags, url, description, isLast = false} = Astro.props
+const { title, date, tags, url, description, isLast = false } = Astro.props
 ---
 
-<article class:list={['root', isLast && 'last']}>
-  <a href={url} class='link'/>
-  <div class='wrapper'>
-    <h2 class='title'>{title}</h2>
-    <p class='description'>{description}</p>
-    <ul class='tags'>
-      {tags.map(tag => (
-        <li>
-          <Tag tag={tag} />
-        </li>
-      ))}
-    </ul>
-    <p class='date'>{date}</p>
-  </div>
-</article>
+  <article class:list={['root', isLast && 'last']}>
+    <a href={url} class='link' />
+    <div class='wrapper'>
+      <h2 class='title'>{title}</h2>
+      <p class='description'>{description}</p>
+      <ul class='tags'>
+        {tags.map(tag => (
+          <li>
+            <Tag tag={tag} />
+          </li>
+        ))}
+      </ul>
+      <p class='date'>{date}</p>
+    </div>
+  </article>
 
-<style>
+    <style>
+
+
+
+
+
+
+
+
+
+
   .root {
     border-bottom: 1px solid var(--color-border-secondary);
     padding-bottom: var(--space-l);
@@ -72,4 +82,14 @@ const { title, date, tags, url, description, isLast = false} = Astro.props
   list-style: none;
   padding-left: 0;
 }
-</style>
+
+
+
+
+
+
+
+
+
+
+    </style>

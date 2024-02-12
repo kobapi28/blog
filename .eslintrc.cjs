@@ -4,19 +4,19 @@
 module.exports = {
   root: true,
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:astro/recommended",
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:astro/recommended',
   ],
-  plugins: ["@typescript-eslint", '@stylistic'],
+  plugins: ['@typescript-eslint', '@stylistic'],
   env: {
     browser: true,
     node: true,
   },
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
   rules: {
     // default eslint rules
@@ -42,26 +42,26 @@ module.exports = {
     // typescript eslint rules
     '@typescript-eslint/array-type': 'error',
     // react rules
-    '@stylistic/jsx-quotes': [ 2, 'prefer-single' ],
+    '@stylistic/jsx-quotes': [2, 'prefer-single'],
   },
-  ignorePatterns: ["node_modules", "dist"],
+  ignorePatterns: ['node_modules', 'dist'],
   overrides: [
     {
-      files: ["*.astro"],
-      parser: "astro-eslint-parser",
+      files: ['*.astro'],
+      parser: 'astro-eslint-parser',
       parserOptions: {
-        parser: "@typescript-eslint/parser",
-        extraFileExtensions: [".astro"],
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.astro'],
       },
     },
     {
-      files: "*.cjs",
+      files: '*.cjs',
       env: {
         node: true,
       },
       rules: {
-        "@typescript-eslint/no-var-requires": "off",
+        '@typescript-eslint/no-var-requires': 'off',
       },
     },
   ],
-};
+}

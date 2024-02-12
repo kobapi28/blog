@@ -6,12 +6,12 @@ interface Props {
 const { tag } = Astro.props
 ---
 
-<a class='root' href={`/tags/${tag}`}>
-  <span>#</span>
-  <span>{tag}</span>
-</a>
+  <a class='root' href={`/tags/${tag}`}>
+    <span>#</span>
+    <span>{tag}</span>
+  </a>
 
-<style>
+    <style>
   .root {
   /* NOTE: 以下2つはカード全体がリンクになっている状況でも押せるためにつけたプロパティ */
   position: relative;
@@ -28,4 +28,4 @@ const { tag } = Astro.props
   background-color: var(--color-surface-accent);
 }
 
-</style>
+    </style>

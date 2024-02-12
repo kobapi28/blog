@@ -1,5 +1,5 @@
 ---
-import BaseLayout from './BaseLayout.astro';
+import BaseLayout from './BaseLayout.astro'
 // TODO: 型適切につける
 interface Props {
   frontmatter: {
@@ -11,20 +11,20 @@ interface Props {
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout title={frontmatter.title}>
-  <main>
-    <div class='title'>
-      <h1>{frontmatter.title}</h1>
-      <p>{frontmatter.description}</p>
-      <p>{frontmatter.publishedAt}</p>
-    </div>
-    <div class='content'>
-      <slot />
-    </div>
-  </main>
-</BaseLayout>
+  <BaseLayout title={frontmatter.title}>
+    <main>
+      <div class='title'>
+        <h1>{frontmatter.title}</h1>
+        <p>{frontmatter.description}</p>
+        <p>{frontmatter.publishedAt}</p>
+      </div>
+      <div class='content'>
+        <slot />
+      </div>
+    </main>
+  </BaseLayout>
 
-<style>
+    <style>
   main {
     width: 60%;
     padding-block: var(--space-xxl);
@@ -116,4 +116,4 @@ p {
   line-height: 2;
 }
   }
-</style>
+    </style>
