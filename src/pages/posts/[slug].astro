@@ -8,14 +8,14 @@ import { getCollection } from 'astro:content'
 import { ViewTransitions } from 'astro:transitions'
 
 export async function getStaticPaths() {
-	const posts = await getCollection('post')
+  const posts = await getCollection('post')
 
-	return posts.map((post) => ({
-		params: {
-			slug: post.slug
-		},
-		props: post,
-	}))
+  return posts.map((post) => ({
+    params: {
+      slug: post.slug
+    },
+    props: post,
+  }))
 }
 
 const post = Astro.props
@@ -32,42 +32,42 @@ const { Content } = await post.render()
 
 
 <html lang='ja'>
-	<head>
-		<meta charset='utf-8' />
-		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-		<meta name='viewport' content='width=device-width' />
-		<meta name='generator' content={Astro.generator} />
-		<SEO
-			charset='utf-8'
-			openGraph={{
-				basic: {
-					title: post.data.title,
-					type: 'article',
-					image: new URL(`/og/${post.slug}.png`, Astro.url.origin).toString(),
-					url: `https://kobapi.me/posts/${post.slug}`
-				},
-				image: {
-					alt: post.data.title
-				}
-			}
-			} 
-		/>
-		<title>{post.data.title} | kobapi.me</title>
-		<ViewTransitions />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<div class='title'>
-				<h1>{post.data.title}</h1>
-				<p>{post.data.description}</p>
-				<p>{post.data.publishedAt}</p>
-			</div>
-			<div class='content'>
-				<Content />
-			</div>
-		</main>
-	</body>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <SEO
+      charset='utf-8'
+      openGraph={{
+        basic: {
+          title: post.data.title,
+          type: 'article',
+          image: new URL(`/og/${post.slug}.png`, Astro.url.origin).toString(),
+          url: `https://kobapi.me/posts/${post.slug}`
+        },
+        image: {
+          alt: post.data.title
+        }
+      }
+      } 
+    />
+    <title>{post.data.title} | kobapi.me</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class='title'>
+        <h1>{post.data.title}</h1>
+        <p>{post.data.description}</p>
+        <p>{post.data.publishedAt}</p>
+      </div>
+      <div class='content'>
+        <Content />
+      </div>
+    </main>
+  </body>
 </html>
 
 
