@@ -15,13 +15,13 @@ export async function getStaticPaths() {
 	const posts = await queryPosts()
 	const tags: string[] = await queryTags()
 
-  return tags.map((tag: string) => {
-    const filteredPosts = posts.filter((post: Post) => post.tags.includes(tag));
-    return {
-      params: { tag },
-      props: { posts: filteredPosts },
-    };
-  });
+	return tags.map((tag: string) => {
+		const filteredPosts = posts.filter((post: Post) => post.tags.includes(tag));
+		return {
+			params: { tag },
+			props: { posts: filteredPosts },
+		};
+	});
 }
 
 const { tag } = Astro.params;
@@ -30,19 +30,19 @@ const filteredPosts = posts.filter((post: Post) => post.tags.includes(tag));
 ---
 
 <BaseLayout title={tag}>
-  <main>
+	<main>
 		<Title title={tag} />
 		<div class='articles'>
 			{filteredPosts.map((post: Post) => 
-			<PostItem 
-			isLast={post === filteredPosts[filteredPosts.length - 1]}
-			class:list={['article']}
-			url={'/posts/' + post.slug} 
-			description={post.description}
-			title={post.title} 
-			date={post.publishedAt} 
-			tags={post.tags} 
-			/>)}
+				<PostItem 
+					isLast={post === filteredPosts[filteredPosts.length - 1]}
+					class:list={['article']}
+					url={`/posts/${  post.slug}`} 
+					description={post.description}
+					title={post.title} 
+					date={post.publishedAt} 
+					tags={post.tags} 
+				/>)}
 		</div>
 	</main>
 </BaseLayout>
