@@ -13,12 +13,12 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout title={frontmatter.title}>
   <main>
-    <div class="title">
+    <div class='title'>
       <h1>{frontmatter.title}</h1>
       <p>{frontmatter.description}</p>
       <p>{frontmatter.publishedAt}</p>
     </div>
-    <div class="content">
+    <div class='content'>
       <slot />
     </div>
   </main>

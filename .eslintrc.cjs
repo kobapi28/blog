@@ -20,6 +20,7 @@ module.exports = {
   plugins: ["@typescript-eslint"],
   rules: {
     "no-undef": "off",
+    'jsx-quotes': [ 2, 'prefer-single' ],
   },
   ignorePatterns: ["node_modules", "dist"],
   overrides: [

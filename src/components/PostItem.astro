@@ -15,9 +15,9 @@ const { title, date, tags, url, description, isLast = false} = Astro.props
 
 <article class:list={['root', isLast && 'last']}>
   <a href={url} class='link'/>
-  <div class="wrapper">
+  <div class='wrapper'>
     <h2 class='title'>{title}</h2>
-    <p class="description">{description}</p>
+    <p class='description'>{description}</p>
     <ul class='tags'>
       {tags.map(tag => (
         <li>

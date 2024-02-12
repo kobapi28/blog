@@ -2,8 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import Title from '../../components/Title.astro'
 import PostItem from '../../components/PostItem.astro'
-import type { FrontMatter } from '@/types/frontMatter'
-import { getCollection } from 'astro:content';
 import type { Post } from '@/libs/schema/post';
 import { queryPosts } from '@/libs/query/post';
 import { queryTags } from '@/libs/query/tag';
@@ -34,7 +32,7 @@ const filteredPosts = posts.filter((post: Post) => post.tags.includes(tag));
 <BaseLayout title={tag}>
   <main>
 		<Title title={tag} />
-		<div class="articles">
+		<div class='articles'>
 			{filteredPosts.map((post: Post) => 
 			<PostItem 
 			isLast={post === filteredPosts[filteredPosts.length - 1]}

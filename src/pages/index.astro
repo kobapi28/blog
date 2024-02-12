@@ -2,7 +2,6 @@
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import PostItem from '../components/PostItem.astro'
 import Title from '../components/Title.astro'
-import { getCollection } from 'astro:content'
 import { queryPosts } from '@/libs/query/post'
 
 const PAGE_TITLE = 'All Posts'
@@ -12,7 +11,7 @@ const allPosts = await queryPosts()
 <BaseLayout title={PAGE_TITLE}>
 	<main>
 		<Title title={PAGE_TITLE} />
-		<div class="articles">
+		<div class='articles'>
 			{allPosts.map((post) => 
 			<PostItem 
 			isLast={post === allPosts[allPosts.length - 1]}
