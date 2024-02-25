@@ -7,6 +7,7 @@ image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'Astroのロゴ。'
 tags: ['diary']
+isDraft: false
 ---
 
 大きな目標を立てるのではなくてやれば叶う目標とか、やりたいこととかそういうのを書いておきたいなと思って書きます。

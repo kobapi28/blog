@@ -1,8 +1,8 @@
-import { getCollection } from 'astro:content'
+import { queryFilteredPost } from './post'
 
 export async function queryTags() {
-  const posts = await getCollection('post')
-  const tags = posts.flatMap(post => post.data.tags)
+  const posts = await queryFilteredPost()
+  const tags = posts.flatMap(post => post.tags)
 
   return [...new Set(tags)]
 }

@@ -4,8 +4,8 @@ import '../../styles/reset.css'
 import '../../styles/global.css'
 import '@fontsource-variable/noto-sans-jp'
 import { SEO } from 'astro-seo'
-import { getCollection } from 'astro:content'
 import { ViewTransitions } from 'astro:transitions'
+import { getCollection } from 'astro:content'
 
 export async function getStaticPaths() {
   const posts = await getCollection('post')
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   return posts.map(post => ({
     params: { slug: post.slug },
     props: post
-  }))
+  })).filter(post => !post.props.data.isDraft)
 }
 
 const post = Astro.props

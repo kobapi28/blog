@@ -4,8 +4,9 @@ import { getOgImage } from '@/components/OgImage'
 
 export async function getStaticPaths() {
   const posts = await getCollection('post')
+  const filteredPost = posts.filter(post => !post.data.isDraft)
 
-  return posts.map((post: { slug: string }) => (
+  return filteredPost.map((post: { slug: string }) => (
     { params: { slug: post.slug } }
   ))
 }

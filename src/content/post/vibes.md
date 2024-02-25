@@ -7,4 +7,5 @@ image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'Astroのロゴ。'
 tags: ['design system']
+isDraft: true
 ---

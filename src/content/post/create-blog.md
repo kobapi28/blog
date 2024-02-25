@@ -6,6 +6,7 @@ image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'Astroのロゴ。'
 tags: ["astro"]
+isDraft: true
 ---
 
 ## import エイリアスの設定
