@@ -33,7 +33,7 @@ const { Content } = await post.render()
           basic: {
             title: post.data.title,
             type: 'article',
-            image: `https://kobapi.me/posts/${post.slug}.png`,
+            image: new URL(`/og/${post.slug}.png`, Astro.site).toString(),
             url: `https://kobapi.me/posts/${post.slug}`
           },
           image: { alt: post.data.title }

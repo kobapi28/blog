@@ -4,6 +4,8 @@ import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://kobapi.me',
+  vite: { optimizeDeps: { exclude: ['@resvg/resvg-js'] } },
   integrations: [react()],
   markdown: {
     shikiConfig: {
