@@ -87,15 +87,15 @@
   --color-background-secondary: rgba(0,0,0,0.01)
   
     /* Font Size */;
-    --font-size-radio: 1.125;
-    --font-size-3xl: calc(var(--font-size-2xl) * var(--font-size-radio));
-    --font-size-2xl: calc(var(--font-size-xl) * var(--font-size-radio));
-    --font-size-xl: calc(var(--font-size-l) * var(--font-size-radio));
-    --font-size-l: calc(var(--font-size-m) * var(--font-size-radio));
+    --font-size-ratio: 1.125;
+    --font-size-3xl: calc(var(--font-size-2xl) * var(--font-size-ratio));
+    --font-size-2xl: calc(var(--font-size-xl) * var(--font-size-ratio));
+    --font-size-xl: calc(var(--font-size-l) * var(--font-size-ratio));
+    --font-size-l: calc(var(--font-size-m) * var(--font-size-ratio));
     --font-size-m: 1rem;
-    --font-size-s: calc(var(--font-size-m) / var(--font-size-radio));
-    --font-size-xs: calc(var(--font-size-s) / var(--font-size-radio));
-    --font-size-xxs: calc(var(--font-size-xs) / var(--font-size-radio));
+    --font-size-s: calc(var(--font-size-m) / var(--font-size-ratio));
+    --font-size-xs: calc(var(--font-size-s) / var(--font-size-ratio));
+    --font-size-xxs: calc(var(--font-size-xs) / var(--font-size-ratio));
 
   /* Heading */
   --font-size-h1: var(--font-size-3xl);
@@ -106,14 +106,14 @@
   --font-size-h6: var(--font-size-s);
 
   /* Spacing */;
-  --space-radio: 1.25;
-  --space-xxl: calc(var(--space-xl) * var(--space-radio));
-  --space-xl: calc(var(--space-l) * var(--space-radio));
-  --space-l: calc(var(--space-m) * var(--space-radio));
+  --space-ratio: 1.25;
+  --space-xxl: calc(var(--space-xl) * var(--space-ratio));
+  --space-xl: calc(var(--space-l) * var(--space-ratio));
+  --space-l: calc(var(--space-m) * var(--space-ratio));
   --space-m: 1rem;
-  --space-s: calc(var(--space-m) / var(--space-radio));
-  --space-xs: calc(var(--space-s) / var(--space-radio));
-  --space-xxs: calc(var(--space-xs) / var(--space-radio));
+  --space-s: calc(var(--space-m) / var(--space-ratio));
+  --space-xs: calc(var(--space-s) / var(--space-ratio));
+  --space-xxs: calc(var(--space-xs) / var(--space-ratio));
 
   /* Border Radius */
   --radius-xs: 4px;
